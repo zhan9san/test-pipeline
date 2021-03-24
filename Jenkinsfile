@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'feature b'
                 echo 'Building..'
                 sh 'pwd'
                 sh 'ls'
