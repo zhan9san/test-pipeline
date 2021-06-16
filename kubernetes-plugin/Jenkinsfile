@@ -15,5 +15,13 @@ pipeline {
         }
       }
     }
+    stage('Snyk image') {
+      steps {
+        container('snyk') {
+          sh 'snyk --help'
+          sh 'pwd && ls -al'
+        }
+      }
+    }
   }
 }

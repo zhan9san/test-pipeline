@@ -15,3 +15,8 @@ spec:
     command:
     - cat
     tty: true
+  - name: snyk
+    image: snyk/snyk-cli:docker
+    command:
+      - cat
+    tty: true
