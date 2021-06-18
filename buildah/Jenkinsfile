@@ -1,0 +1,16 @@
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'buildah/KubernetesPod.yaml'
+    }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        container('buildah') {
+          sh 'buildah bud -f buildah/Dockerfile -t artifactory.example.com/test-docker/python-app:latest buildah'
+        }
+      }
+    }
+  }
+}
